@@ -10391,11 +10391,12 @@ void ObjectMgr::LoadCreatureStaticFlagsOverride()
             continue;
         }
 
+        /*
         if (std::find(creatureData->spawnDifficulties.begin(), creatureData->spawnDifficulties.end(), difficultyId) == creatureData->spawnDifficulties.end())
         {
             TC_LOG_ERROR("sql.sql", "Table `creature_static_flags_override` has data for a creature that is not available for the specified DifficultyId (SpawnId: {}, DifficultyId: {}), skipped", spawnId, difficultyId);
             continue;
-        }
+        }*/
 
         CreatureStaticFlagsOverride& staticFlagsOverride = _creatureStaticFlagsOverrideStore[std::make_pair(spawnId, difficultyId)];
         if (!fields[2].IsNull())
