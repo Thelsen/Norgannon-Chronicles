@@ -1,0 +1,59 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run: bnetserver",
+      "type": "shell",
+      "command": "${workspaceFolder}/build/bin/Debug/bin/bnetserver",
+      "args": [
+        "--config",
+        "${workspaceFolder}/build/bin/Debug/etc/bnetserver.conf"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/build/bin/Debug/bin"
+      },
+      "presentation": {
+        "label": "bnetserver",
+        "group": "servers",
+        "reveal": "always",
+        "panel": "dedicated",
+        "close": false
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Run: worldserver",
+      "type": "shell",
+      "command": "${workspaceFolder}/build/bin/Debug/bin/worldserver",
+      "args": [
+        "--config",
+        "${workspaceFolder}/build/bin/Debug/etc/worldserver.conf"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/build/bin/Debug/bin"
+      },
+      "presentation": {
+        "label": "worldserver",
+        "group": "servers",
+        "reveal": "always",
+        "panel": "dedicated",
+        "close": false
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Run: bnetserver + worldserver",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Run: bnetserver",
+        "Run: worldserver"
+      ],
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
